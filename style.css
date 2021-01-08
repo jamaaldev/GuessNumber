@@ -1,0 +1,97 @@
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1aa091;
+    max-width: 1000px;
+    margin: auto;
+    border-radius: 5px;
+}
+
+.container .gameguess_title{
+    color: honeydew;
+}
+
+.container .game_q{
+    padding: 0px 40px;
+    border-radius: 5px;
+    background-color: honeydew;
+    font-size: 20px;
+}
+
+.game_container{
+    display: flex;
+    flex-direction: column;
+    width: 1200px;
+    height: 55vh;
+}
+
+.game_title{
+    display: flex;
+    justify-content:space-evenly;
+    color: honeydew;
+}
+
+.game_block{
+    display: flex;
+    justify-content: space-evenly;
+
+}
+.left{
+    display: flex;
+    flex-direction: column;
+    margin-left: 35px;
+
+
+}
+.left input{
+    margin-bottom: 10px;
+    height: 40px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    font-size: 18px;
+}
+.left button{
+    padding: 15px 20px;
+    margin-top: 10px;
+    border-radius: 3px;
+    border: none;
+    background-color: rgb(214, 240, 228);
+    color: rgb(24, 24, 31);
+    outline: none;
+
+}
+
+.right{
+    display: flex;
+    flex-direction: column;
+    margin-right: -6px;
+
+}
+
+.right .labelpoint{
+    display: flex;
+    align-items: center;
+    padding: 3px 20px;
+    background-color: rgb(214, 240, 228);
+    margin: 5px 10px;
+    border-radius: 3px;
+
+}
+
+.right .labelpoint span{
+    display: flex;
+    align-items: center;
+    
+    margin: 5px 10px;
+
+}
+
+.game_c{
+    cursor: pointer;
+}
+
+.game_stop{
+    cursor:no-drop;
+}
