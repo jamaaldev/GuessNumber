@@ -12,17 +12,15 @@ point.innerHTML = startpoints;
 
 let anim = `https://assets2.lottiefiles.com/packages/lf20_u4yrau.json`;
 
-
-
-var animation = bodymovin.loadAnimation({
+let animation = bodymovin.loadAnimation({
   container: qmarks, // Required
   path: anim, // Required
-  renderer: 'svg/canvas/html', // Required
+  renderer: "svg/canvas/html", // Required
   loop: true, // Optional
   autoplay: false, // Optional
   name: "Hello World", // Name for future reference. Optional.
-})
-animation.goToAndStop(0, false)
+});
+animation.goToAndStop(0, false);
 
 // AddeventListener
 
@@ -32,10 +30,7 @@ qmarks.addEventListener("click", () => {
   let point = document.querySelector(".points > span");
   point.innerHTML = startpoints;
 
-  animation.goToAndStop(-1, false)
-
-  
-  
+  animation.goToAndStop(-1, false);
   reset();
 });
 
@@ -46,9 +41,7 @@ bottoncheck.addEventListener("click", () => {
     startpoints--;
     point.innerHTML = startpoints;
     myGuess(startpoints);
-  } 
-  
-
+  }
 });
 
 // function maker
@@ -60,8 +53,6 @@ function reset() {
   startpoints = 20;
   point.innerHTML = startpoints;
   qmarks.classList.remove("game_c");
-  
-
 }
 
 function randomBot() {
@@ -81,30 +72,25 @@ function checkNumber(bot, human, point) {
   console.log("bot", bot);
   console.log("me", human);
   if (bot === human) {
+    // winner condition block,
     console.log("You Won");
     qmark.innerHTML = +bot;
     qmark.innerHTML += "  Restart";
     qmarks.classList.add("game_c");
     document.querySelector(".container").style.backgroundColor = "#1aa02e";
     myscore += point;
-
-    
-    animation.goToAndPlay(0, true)
-    
-
+    // play the winner party
+    animation.goToAndPlay(0, true);
+    // reset the value input
     document.querySelector("#typenumber").value = "";
 
     document.querySelector(".dynamic_text > h3").innerHTML =
-    "Your Guess is Correct";
-    
+      "Your Guess is Correct";
+
+    // adding PointLeft in to Mypoint Condition,
     if ((mypoint.innerHTML = "0")) {
       mypoint.innerHTML = myscore;
     }
-    
-
-    
-
-    
   } else if (bot > human) {
     document.querySelector(".dynamic_text > h3").innerHTML =
       "Your Guess is Low";
@@ -112,10 +98,10 @@ function checkNumber(bot, human, point) {
     document.querySelector(".dynamic_text > h3").innerHTML =
       "Your Guess is High";
   }
-
-  if(point === 0){
+  // When PointLeft Go To Zero is Game Over Restart Will Apear,
+  if (point === 0) {
     qmark.innerHTML += "  Restart";
     qmarks.classList.add("game_c");
-    document.querySelector("#typenumber").value = "";    
+    document.querySelector("#typenumber").value = "";
   }
 }
