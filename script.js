@@ -10,6 +10,20 @@ let startpoints = 20;
 start.innerHTML = startpoints;
 point.innerHTML = startpoints;
 
+let anim = `https://assets2.lottiefiles.com/packages/lf20_u4yrau.json`;
+
+
+
+var animation = bodymovin.loadAnimation({
+  container: qmarks, // Required
+  path: anim, // Required
+  renderer: 'svg/canvas/html', // Required
+  loop: true, // Optional
+  autoplay: false, // Optional
+  name: "Hello World", // Name for future reference. Optional.
+})
+animation.goToAndStop(0, false)
+
 // AddeventListener
 
 qmarks.addEventListener("click", () => {
@@ -18,6 +32,10 @@ qmarks.addEventListener("click", () => {
   let point = document.querySelector(".points > span");
   point.innerHTML = startpoints;
 
+  animation.goToAndStop(-1, false)
+
+  
+  
   reset();
 });
 
@@ -42,6 +60,8 @@ function reset() {
   startpoints = 20;
   point.innerHTML = startpoints;
   qmarks.classList.remove("game_c");
+  
+
 }
 
 function randomBot() {
@@ -68,15 +88,22 @@ function checkNumber(bot, human, point) {
     document.querySelector(".container").style.backgroundColor = "#1aa02e";
     myscore += point;
 
+    
+    animation.goToAndPlay(0, true)
+    
+
     document.querySelector("#typenumber").value = "";
 
     document.querySelector(".dynamic_text > h3").innerHTML =
-      "Your Guess is Correct";
-
+    "Your Guess is Correct";
+    
     if ((mypoint.innerHTML = "0")) {
       mypoint.innerHTML = myscore;
     }
     
+
+    
+
     
   } else if (bot > human) {
     document.querySelector(".dynamic_text > h3").innerHTML =

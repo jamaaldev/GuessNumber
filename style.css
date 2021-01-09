@@ -4,9 +4,11 @@
     flex-direction: column;
     align-items: center;
     background-color: #1aa091;
-    max-width: 1000px;
-    margin: auto;
+    max-width: 900px;
+    max-height: 100vh;
     border-radius: 5px;
+    margin: auto;
+
 }
 
 .container .gameguess_title{
@@ -14,6 +16,7 @@
 }
 
 .container .game_q{
+    position: relative;
     padding: 0px 40px;
     border-radius: 5px;
     background-color: honeydew;
@@ -94,4 +97,19 @@
 
 .game_stop{
     cursor:no-drop;
+}
+.tot{
+    z-index: 5;
+}
+.animation{
+    z-index: 5;
+}
+
+.game_q > div{
+    width: auto !important;
+    position: absolute !important;
+    transform: matrix3d(0.325, 0, 0, 0, 0, 0.325, 0, 0, 0, 0, 52, 99, -32, -83, -38, 1 )!important;
+    padding: 1200px;
+    height: auto !important;
+    
 }
