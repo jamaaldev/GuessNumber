@@ -65,7 +65,7 @@ function reset() {
 }
 
 function randomBot() {
-  botRandom = Math.floor(Math.random() * 4 + 1);
+  botRandom = Math.floor(Math.random() * 20 + 1);
   return botRandom;
 }
 
